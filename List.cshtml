@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApplication5.Models.StudentModel>
+@{
+    ViewBag.Title = "Student Details";
+}
+<h2 class="text-center text-danger">Student Details</h2>
+<h4 class="text-center text-danger">List</h4>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead class="bg-secondary text-white">
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Code</th>
+                    <th class="text-center">Salary</th>
+                    <th class="text-center">PhoneNumber</th>
+                     <th class="text-center"></th>
+                     <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var r in Model)
+                {
+                    <tr>
+                        <td class="text-center">@r.Id</td>
+                        <td class="text-center">@r.Name</td>
+                        <td class="text-center">@r.Code</td>
+                        <td class="text-center">@r.Salary</td>
+                        <td class="text-center">@r.PhoneNumber</td>
+                        <td class=" col-sm-2 text-center">
+                            <a asp-action="Edit"asp-route-id="@r.Id" class="btn btn-success">Edit</a> 
+                        </td>
+                        <td class="col-sm-2 text-center">
+                         @* <a asp-action="Delete" asp-route-id="@r.Id" class="btn btn-danger ">Delete</a>*@
+                          
+                            <button class="btn btn-danger Delete" data-id="@r.Id">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="~/js/Student.js"></script>
