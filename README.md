@@ -13,7 +13,7 @@
 - MVC Architecture
 
 ## Developer
-Naganjaneyulu
+ Mutukuri Naganjaneyulu
 
 ## Project Type
 Full Stack .NET Web Application
